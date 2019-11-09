@@ -1,4 +1,4 @@
-package com.java.Kakao_Coding_Test;
+package com.java.Programmers.Kakao2019InternTest;
 
 //어케푸는거냐..
 public class Solution3 {
