@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class MatrixMultiplicationOrder_11049 {
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
@@ -24,8 +23,6 @@ public class MatrixMultiplicationOrder_11049 {
         for (int i = 0; i < p.length; i++) {
             p[i] = arrayList.get(i);
         }
-
-
         System.out.println(Matrix_Chain_Order(p));
     }
 
@@ -48,7 +45,6 @@ public class MatrixMultiplicationOrder_11049 {
                 }
             }
         }
-
         return m[1][m[1].length - 1];
     }
 }
