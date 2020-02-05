@@ -2,21 +2,15 @@ package com.java.BOJ.JAVA;
 
 import java.io.*;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
 
 public class IntegerTriangle_1932 {
-    static boolean[][] visited;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
         int n = Integer.parseInt(br.readLine());
-
         int[][] triangle = new int[n][n];
-        visited = new boolean[n][n];
-        List<Integer> list = new LinkedList<>();
 
         for (int i = 0; i < n; i++) {
             String[] a = br.readLine().split(" ");
