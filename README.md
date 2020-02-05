@@ -1,7 +1,7 @@
 Algroithm Problems Solving 
 ========
 
-- ACM-ICPC (Baekjoon Online Judge) - [dbstnsdl12](https://acmicpc.net/user/dbstnsdl12)
+- BOJ (Baekjoon Online Judge) - [dbstnsdl12](https://acmicpc.net/user/dbstnsdl12)
 
 - CodeForces - [anthonymyk](https://codeforces.com/profile/anthonymyk)
 
