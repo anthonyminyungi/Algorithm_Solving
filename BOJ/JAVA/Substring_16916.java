@@ -1,10 +1,11 @@
 package com.java.BOJ.JAVA;
 
 import java.io.*;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
 
-public class Find_1786 {
+// 다시 풀어보기
+// 풀이 참조 1786 찾기
+public class Substring_16916 {
     static LinkedHashSet<Integer> ret;
 
     public static void main(String[] args) throws IOException {
@@ -15,15 +16,10 @@ public class Find_1786 {
         String P = br.readLine();
         char[] tarr = T.toCharArray();
         char[] parr = P.toCharArray();
-        int n = tarr.length;
-        int m = parr.length;
-        ret = new LinkedHashSet<Integer>();
+        ret = new LinkedHashSet<>();
 
         kmpSearch(tarr, parr);
-        bw.append(ret.size() + "\n");
-        Iterator iterator = ret.iterator();
-        while (iterator.hasNext())
-            bw.append(iterator.next() + " ");
+        bw.append(String.valueOf(ret.size() == 0 ? 0 : 1));
         bw.flush();
         bw.close();
         br.close();
