@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.LinkedList;
 import java.util.List;
 
+// 얘는 왜 리스트로 풀었는데도 통과되는걸까
 public class Queue_10845 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -12,32 +13,39 @@ public class Queue_10845 {
         List<Integer> list = new LinkedList<>();
         for (int i = 0; i < N; i++) {
             String[] inst = br.readLine().split(" ");
-            if (inst[0].equals("push")) {
-                list.add(Integer.parseInt(inst[1]));
-            } else if (inst[0].equals("pop")) {
-                if (list.isEmpty())
-                    bw.append("-1\n");
-                else {
-                    bw.append(list.get(0) + "\n");
-                    list.remove(list.get(0));
-                }
-            } else if (inst[0].equals("size")) {
-                bw.append(list.size() + "\n");
-            } else if (inst[0].equals("empty")) {
-                if (list.isEmpty())
-                    bw.append("1\n");
-                else
-                    bw.append("0\n");
-            } else if (inst[0].equals("front")) {
-                if (list.isEmpty())
-                    bw.append("-1\n");
-                else
-                    bw.append(list.get(0) + "\n");
-            } else if (inst[0].equals("back")) {
-                if (list.isEmpty())
-                    bw.append("-1\n");
-                else
-                    bw.append(list.get(list.size() - 1) + "\n");
+            switch (inst[0]) {
+                case "push":
+                    list.add(Integer.parseInt(inst[1]));
+                    break;
+                case "pop":
+                    if (list.isEmpty())
+                        bw.append("-1\n");
+                    else {
+                        bw.append(String.valueOf(list.get(0))).append("\n");
+                        list.remove(list.get(0));
+                    }
+                    break;
+                case "size":
+                    bw.append(String.valueOf(list.size())).append("\n");
+                    break;
+                case "empty":
+                    if (list.isEmpty())
+                        bw.append("1\n");
+                    else
+                        bw.append("0\n");
+                    break;
+                case "front":
+                    if (list.isEmpty())
+                        bw.append("-1\n");
+                    else
+                        bw.append(String.valueOf(list.get(0))).append("\n");
+                    break;
+                case "back":
+                    if (list.isEmpty())
+                        bw.append("-1\n");
+                    else
+                        bw.append(String.valueOf(list.get(list.size() - 1))).append("\n");
+                    break;
             }
         }
         bw.flush();
