@@ -2,7 +2,7 @@ package com.java.BOJ.JAVA;
 
 import java.io.*;
 
-public class Star4 {
+public class Star4_2441 {
     public static void main(String[] agrs) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
