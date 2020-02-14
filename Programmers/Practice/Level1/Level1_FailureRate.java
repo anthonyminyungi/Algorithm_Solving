@@ -1,4 +1,4 @@
-package com.java.Programmers.Practice;
+package com.java.Programmers.Practice.Level1;
 
 import java.util.Arrays;
 import java.util.Comparator;

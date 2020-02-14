@@ -1,4 +1,4 @@
-package com.java.Programmers.Practice;
+package com.java.Programmers.Practice.Level1;
 
 public class Level1_StringCompress {
     public static void main(String[] args) {
