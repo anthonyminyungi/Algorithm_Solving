@@ -3,7 +3,7 @@ package com.java.BOJ.JAVA;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Jegopnn_1016 {
+public class SquareNoNo_1016 {
     static long min;
     static long max;
 
