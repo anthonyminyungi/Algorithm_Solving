@@ -2,6 +2,11 @@ package com.java.Programmers.Practice.Level3;
 
 import java.util.*;
 
+// 너무 더럽게 푼 것 같아서 다른 풀이를 찾아보려고 했으나
+// 인터넷의 다른 풀이 또한 매우 길고 복잡해보인다.
+// 단순히 의식의 흐름으로 풀기도 했고 완전 좋은 코드도 아닌 것 같지만
+// 나름 잘 선방한 것 같다.
+
 public class Level3_BestAlbum {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(solution(new String[]{"classic", "pop", "classic", "classic", "pop"}, new int[]{500, 600, 150, 800, 2500})));
