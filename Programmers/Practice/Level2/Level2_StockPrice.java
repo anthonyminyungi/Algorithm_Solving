@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 
-// 문제를 제대로 이해를 못해서 풀이를 보고 풀어버렸다. 다시 살펴보기 
+// 문제를 제대로 이해를 못해서 풀이를 보고 풀어버렸다. 다시 살펴보기
 // https://programmers.co.kr/learn/questions/9454
 public class Level2_StockPrice {
     public static void main(String[] args) {
