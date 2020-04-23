@@ -12,6 +12,8 @@ public class Level2_OpenChatRoom {
 
         Map<String, String> map = new LinkedHashMap<>();
         List<String> results = new ArrayList<>(); // 아니 왜 LinkedList 로 했을때 느리고 ArrayList 가 통과하는거지??????
+        // reference : https://dogcowking.tistory.com/37 , https://nnoco.tistory.com/73 
+        // 삭제 로직이 없고 단순 삽입과 접근(탐색)만을 하는 경우 ArrayList 가 월등히 빠른 성능을 보인다.
         StringTokenizer st;
         String inst;
         String uid;
