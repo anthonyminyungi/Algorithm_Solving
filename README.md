@@ -1,4 +1,4 @@
-Algroithm Problems Solving 
+Algorithm Problems Solving 
 ========
 
 - BOJ (Baekjoon Online Judge) - [dbstnsdl12](https://acmicpc.net/user/dbstnsdl12)
@@ -11,5 +11,5 @@ Algroithm Problems Solving
 
 ### Used Language for Solving
 - Java
-- C++
 - Python
+- Javascript
