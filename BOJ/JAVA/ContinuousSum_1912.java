@@ -10,20 +10,14 @@ public class ContinuousSum_1912 {
 
         int N = Integer.parseInt(br.readLine());
         String[] in = br.readLine().split(" ");
-        int gmax = 0;
-        for (int i = 0; i < N; i++) {
-            int sum = Integer.parseInt(in[i]);
-            int max = sum;
-            for (int j = i + 1; j < N; j++) {
-                sum += Integer.parseInt(in[j]);
-                max = Math.max(max, sum);
-            }
-            System.out.println(max);
-            if (i == 0)
-                gmax = max;
-            else
-                gmax = Math.max(gmax, max);
+        int[] dp = new int[in.length];
+        dp[0] = Integer.parseInt(in[0]);
+        int gmax = Integer.MIN_VALUE;
+        for (int i = 1; i < N; i++) {
+            int cur = Integer.parseInt(in[i]);
+            dp[i] = Math.max(dp[i - 1] + cur, cur);
+            gmax = Math.max(dp[i], gmax);
         }
-        System.out.println(gmax);
+        System.out.println(Math.max(gmax, dp[0]));
     }
 }
