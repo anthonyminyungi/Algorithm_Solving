@@ -1,4 +1,4 @@
-package com.java.Programmers.SkillCheck;
+package com.algorithms.Programmers.SkillCheck;
 
 import java.util.LinkedHashMap;
 

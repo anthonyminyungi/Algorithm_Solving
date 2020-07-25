@@ -1,4 +1,4 @@
-package com.java.SWExpert_Academy.D1;
+package com.algorithms.SWExpert_Academy.D1;
 
 import java.io.*;
 

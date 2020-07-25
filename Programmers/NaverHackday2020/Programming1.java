@@ -1,4 +1,4 @@
-package com.java.Programmers.NaverHackday2020;
+package com.algorithms.Programmers.NaverHackday2020;
 
 import java.util.Arrays;
 import java.util.Comparator;

@@ -1,4 +1,4 @@
-package com.java.Programmers.Practice.Level2;
+package com.algorithms.Programmers.Practice.Level2;
 
 // 정답 코드 찾아서 풀었음.
 // 다시 풀어보기. https://geehye.github.io/programmers-greedy-02/#

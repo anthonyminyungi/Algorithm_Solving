@@ -1,4 +1,4 @@
-package com.java.Programmers.SummerCoding;
+package com.algorithms.Programmers.SummerCoding;
 
 import java.util.ArrayList;
 import java.util.Collections;

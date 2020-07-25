@@ -1,4 +1,4 @@
-package com.java.Programmers.DevMatching2020;
+package com.algorithms.Programmers.DevMatching2020;
 
 public class Programming2 {
 

@@ -1,4 +1,4 @@
-package com.java.Programmers.Practice.Level3;
+package com.algorithms.Programmers.Practice.Level3;
 
 import java.util.*;
 

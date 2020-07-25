@@ -1,4 +1,4 @@
-package com.java.Programmers.NaverHackday2020;
+package com.algorithms.Programmers.NaverHackday2020;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedList;

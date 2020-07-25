@@ -1,4 +1,4 @@
-package com.java.Programmers.Practice.Level1;
+package com.algorithms.Programmers.Practice.Level1;
 
 import java.util.Arrays;
 

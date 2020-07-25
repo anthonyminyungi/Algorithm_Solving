@@ -1,4 +1,4 @@
-package com.java.Programmers.Kakao2020;
+package com.algorithms.Programmers.Kakao2020;
 
 // 시간 모자라서 못품. 다시 풀어보기
 

@@ -1,4 +1,4 @@
-package com.java.LeetCode;
+package com.algorithms.LeetCode;
 
 public class PalindromeNumber_9 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.java.Programmers.Practice.Level2;
+package com.algorithms.Programmers.Practice.Level2;
 
 public class Level2_NumberExpression {
     public static void main(String[] args) {

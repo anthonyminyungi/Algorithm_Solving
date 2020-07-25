@@ -1,4 +1,4 @@
-package com.java.Programmers.Practice.Level2;
+package com.algorithms.Programmers.Practice.Level2;
 
 
 // 무슨 공식문제네... 알면 바로 풀고 모르면 오래걸리는 문제

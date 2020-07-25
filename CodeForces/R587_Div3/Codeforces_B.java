@@ -1,5 +1,5 @@
 
-package com.java.CodeForces.R587_Div3;
+package com.algorithms.CodeForces.R587_Div3;
 
 import java.io.*;
 import java.util.ArrayList;

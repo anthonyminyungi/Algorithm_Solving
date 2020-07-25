@@ -1,4 +1,4 @@
-package com.java.Programmers.NaverHackday2020;
+package com.algorithms.Programmers.NaverHackday2020;
 
 public class Programming3 {
     public static void main(String[] args) {

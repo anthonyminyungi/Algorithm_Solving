@@ -1,4 +1,4 @@
-package com.java.Programmers.SummerCoding;
+package com.algorithms.Programmers.SummerCoding;
 
 public class Programming1 {
     public static void main(String[] args) {

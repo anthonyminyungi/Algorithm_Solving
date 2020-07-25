@@ -1,4 +1,4 @@
-package com.java.BOJ.JAVA;
+package com.algorithms.BOJ.JAVA;
 
 import java.io.*;
 import java.util.ArrayList;

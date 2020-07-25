@@ -1,4 +1,4 @@
-package com.java.Programmers.Kakao2019InternTest;
+package com.algorithms.Programmers.Kakao2019InternTest;
 
 import java.util.ArrayList;
 

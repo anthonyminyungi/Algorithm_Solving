@@ -1,4 +1,4 @@
-package com.java.Programmers.Practice.Level2;
+package com.algorithms.Programmers.Practice.Level2;
 
 public class Level2_OneTwoFour {
     static String[] help = {"", "1", "2", "4", "11", "12", "14", "21", "22", "24", "41", "42", "44"};

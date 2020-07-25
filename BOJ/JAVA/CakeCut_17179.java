@@ -1,4 +1,4 @@
-package com.java.BOJ.JAVA;
+package com.algorithms.BOJ.JAVA;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

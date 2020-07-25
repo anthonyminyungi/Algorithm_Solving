@@ -1,4 +1,4 @@
-package com.java.Programmers.Kakao2020;
+package com.algorithms.Programmers.Kakao2020;
 
 import java.util.*;
 

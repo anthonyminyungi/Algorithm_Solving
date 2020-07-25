@@ -1,4 +1,4 @@
-package com.java.Programmers.CnuDevday_2019;
+package com.algorithms.Programmers.CnuDevday_2019;
 
 public class Solution_1 {
     public static void main(String[] args) {

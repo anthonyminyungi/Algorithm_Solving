@@ -1,4 +1,4 @@
-package com.java.LeetCode;
+package com.algorithms.LeetCode;
 
 // Easy
 public class ReverseInteger_7 {
