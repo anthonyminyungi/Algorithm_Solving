@@ -1,9 +1,6 @@
 package com.algorithms.Programmers.Kakao2020;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Programming2 {
     public static void main(String[] args) {
