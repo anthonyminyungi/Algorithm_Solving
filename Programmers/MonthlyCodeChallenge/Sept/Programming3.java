@@ -1,8 +1,5 @@
 package com.algorithms.Programmers.MonthlyCodeChallenge.Sept;
 
-import java.util.*;
-import java.util.stream.*;
-
 // 20점
 public class Programming3 {
     public static void main(String[] args) {
@@ -11,55 +8,18 @@ public class Programming3 {
     }
 
     public static int solution(int[] a) {
-        int answer = 0;
-        List<Integer> list;
-        int lowDelete;
-        for (int i = 0; i < a.length; i++) {
-            int target = a[i];
-            lowDelete = 0;
-            list = Arrays.stream(a).boxed().collect(Collectors.toCollection(ArrayList::new));
-            int idx = 0;
-            int cnt = 0;
-            while (list.size() > 1) {
-                if (idx < list.size() - 1) {
-                    int current = list.get(idx);
-                    int next = list.get(idx + 1);
-                    if (current < next) {
-                        if (next == target) {
-                            if (list.size() == 2 && lowDelete == 0) {
-                                list.remove(idx);
-                                lowDelete++;
-                            } else {
-                                idx++;
-                            }
-                        } else {
-                            list.remove(idx + 1);
-                        }
-                    } else {
-                        if (current == target) {
-                            if (list.size() == 2 && lowDelete == 0) {
-                                list.remove(idx + 1);
-                                lowDelete++;
-                            } else {
-                                idx++;
-                            }
-                        } else {
-                            list.remove(idx);
-                        }
-                    }
-                } else {
-                    idx = 0;
-                }
-                cnt++;
-
-                if (cnt > a.length)
-                    break;
-            }
-//            System.out.println(list);
-            if (list.get(0) == target)
+        int answer = 2;
+        int l = a[0], r = a[a.length - 1];
+        for (int i = 1; i < a.length - 1; i++) {
+            if (l > a[i]) {
+                l = a[i];
                 answer++;
+            }
+            if (r > a[a.length - 1 - i]) {
+                r = a[a.length - 1 - i];
+                answer++;
+            }
         }
-
-        return answer;
+        return l == r ? answer - 1 : answer;
     }
 }
