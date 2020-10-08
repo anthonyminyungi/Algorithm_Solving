@@ -1,78 +1,56 @@
 package com.algorithms.BOJ.JAVA;
 
 import java.io.*;
+import java.util.*;
 
 public class QuadTree_1992 {
+    private static int m;
+    private static int[][] map;
+
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-        int N = Integer.parseInt(br.readLine());
-        char[][] Quad = new char[N][N];
-        for (int i = 0; i < N; i++) {
-            String a = br.readLine();
-            Quad[i] = a.toCharArray();
+        int n = Integer.parseInt(br.readLine());
+        map = new int[n][n];
+        int[] num = new int[n];
+        StringTokenizer st = null;
+        for (int i = 0; i < n; i++) {
+            String str = br.readLine();
+            for (int j = 0; j < n; j++) {
+                map[i][j] = Integer.parseInt(str.substring(j, j + 1));
+            }
         }
-//        for (int i = 0; i < N; i++) {
-//            System.out.println(Arrays.toString(Quad[i]));
-//        }
-        br.close();
-        QTree(bw, Quad, N);
-
-        bw.flush();
-        bw.close();
+        divide(0, 0, n);
     }
 
-    static void QTree(BufferedWriter writer, char[][] arr, int length) throws IOException {
-        int init = Integer.parseInt(String.valueOf(arr[0][0]));
-        if (length == 1) {
-            writer.append(init + "");
-            return;
+    // 배열안에 배열이 가지고 있는 요소가 같은지 체크
+    private static boolean check(int row, int col, int n) {
+        int std = map[row][col];
+        for (int i = row; i < row + n; i++) {
+            for (int j = col; j < col + n; j++) {
+                if (std != map[i][j]) {
+                    return false;
+                }
+            }
         }
-        boolean isCont = true;
-        for (int i = 0; i < length; i++) {
-            for (int j = 0; j < length; j++) {
-                if (Integer.parseInt(String.valueOf(arr[i][j])) != init) {
-                    isCont = false;
-                    break;
-                }
-            }
-            if (!isCont)
-                break;
-        }
-        if (!isCont) {
-            writer.append("(");
+        m = std;
+        return true;
+    }
 
-            char[][] temp = new char[length / 2][length / 2];
-            for (int i = 0; i < length / 2; i++) {
-                for (int j = 0; j < length / 2; j++) {
-                    temp[i][j] = arr[i][j];
-                }
-            }
-            QTree(writer, temp, length / 2);
-            for (int i = 0; i < length / 2; i++) {
-                for (int j = 0; j < length / 2; j++) {
-                    temp[i][j] = arr[i][j + length / 2];
-                }
-            }
-            QTree(writer, temp, length / 2);
-            for (int i = 0; i < length / 2; i++) {
-                for (int j = 0; j < length / 2; j++) {
-                    temp[i][j] = arr[i + length / 2][j];
-                }
-            }
-            QTree(writer, temp, length / 2);
-            for (int i = 0; i < length / 2; i++) {
-                for (int j = 0; j < length / 2; j++) {
-                    temp[i][j] = arr[i + length / 2][j + length / 2];
-                }
-            }
-            QTree(writer, temp, length / 2);
-            writer.append(")");
-
+    // 2*2단위로 나누는 작업
+    private static void divide(int row, int col, int n) {
+        if (check(row, col, n)) {
+            System.out.print(m);
         } else {
-            writer.append(init + "");
+            System.out.print("(");
+            int s = n / 2;
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 2; j++) {
+                    divide(row + s * i, col + s * j, s);
+                }
+            }
+            System.out.print(")");
         }
-
     }
+
 }
