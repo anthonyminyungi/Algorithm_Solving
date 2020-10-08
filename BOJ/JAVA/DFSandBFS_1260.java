@@ -3,6 +3,7 @@ package com.algorithms.BOJ.JAVA;
 import java.io.*;
 import java.util.*;
 
+// BFS & DFS
 public class DFSandBFS_1260 {
     static int[][] graph;
     static boolean[] visited;
