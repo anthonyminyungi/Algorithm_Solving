@@ -1,6 +1,6 @@
 package com.algorithms.Programmers.Kakao2019InternTest;
 
-import java.util.ArrayList;
+import java.util.*;
 
 //통과
 public class Solution {
@@ -21,7 +21,6 @@ public class Solution {
 
         for (int i = 0; i < n; i++) {
             int f = moves[i];
-//            System.out.println(f);
             for (int j = 0; j < h; j++) {
                 if (board[j][f - 1] != 0) {
                     arrayList.add(board[j][f - 1]);
@@ -35,7 +34,6 @@ public class Solution {
                 arrayList.remove(arrayList.size() - 1);
                 answer++;
             }
-//            System.out.println(arrayList);
         }
 
         return answer;

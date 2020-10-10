@@ -1,8 +1,6 @@
 package com.algorithms.Programmers.Kakao2019InternTest;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.LinkedHashSet;
+import java.util.*;
 
 //통과
 public class Solution2 {
@@ -25,7 +23,6 @@ public class Solution2 {
         bb[0] = ' ';
         bb[bb.length - 1] = ' ';
         news = String.valueOf(bb).trim();
-//        System.out.println(news);
         String[] b = news.split("},\\{");
         Arrays.sort(b, new Comparator<String>() {
             @Override
@@ -33,8 +30,6 @@ public class Solution2 {
                 return Integer.compare(o1.length(), o2.length());
             }
         });
-
-//        System.out.println(Arrays.toString(b));
 
         LinkedHashSet<Integer> hashSet = new LinkedHashSet<>();
 
@@ -49,10 +44,7 @@ public class Solution2 {
         for (int i = 0; i < o.length; i++) {
             answer[i] = (Integer) o[i];
         }
-//
-//        System.out.println(Arrays.toString(hashSet.toArray()));
-//        System.out.println(Arrays.toString(answer));
-//        System.out.println(hashSet);
+
         return answer;
     }
 }
