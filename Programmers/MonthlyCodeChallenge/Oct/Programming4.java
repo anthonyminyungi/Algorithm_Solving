@@ -5,10 +5,7 @@ package com.algorithms.Programmers.MonthlyCodeChallenge.Oct;
 // 10.20 업데이트
 // 세그먼트 트리를 활용한 풀이 적용
 // C++로 작성된 블로그 코드를 필사함
-<<<<<<< HEAD
 // 출처 https://openingsound.tistory.com/97
-=======
->>>>>>> f05c738907b1bfa5ed5ba37c0110edffad99ce29
 // 정확한 동작 과정을 이해하지 못함.
 // 디버깅 돌려보면서 정확한 이해가 필요할 듯.
 
