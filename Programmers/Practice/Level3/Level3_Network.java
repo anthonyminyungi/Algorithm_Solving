@@ -2,7 +2,7 @@ package com.algorithms.Programmers.Practice.Level3;
 
 import java.util.*;
 
-// DFS/BFS
+// BFS
 public class Level3_Network {
     static int[][] graph;
     static boolean[] visited;
