@@ -27,11 +27,8 @@ public class NQueen_9663 {
 
         for (int i = 0; i < max; ++i) {
             col[row] = i;
-            if (check(row)) {
-                dfs(max, row + 1);
-            } else {
-                col[row] = 0;
-            }
+            if (check(row)) dfs(max, row + 1);
+            else col[row] = 0;
         }
         col[row] = 0;
     }
