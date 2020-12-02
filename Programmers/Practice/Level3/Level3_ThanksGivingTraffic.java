@@ -1,7 +1,7 @@
 package com.algorithms.Programmers.Practice.Level3;
 
 // 출처 : https://velog.io/@hyeon930/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EC%B6%94%EC%84%9D-%ED%8A%B8%EB%9E%98%ED%94%BD-Java
-
+// 매우 어려움
 public class Level3_ThanksGivingTraffic {
     public static void main(String[] args) {
         System.out.println(solution(new String[]{"2016-09-15 01:00:04.001 2.0s", "2016-09-15 01:00:07.000 2s"}));
@@ -32,34 +32,33 @@ public class Level3_ThanksGivingTraffic {
         }
 
         for (int i = 0; i < lines.length; ++i) {
-            int cnt = 0;
-            int startOfSection = startTimes[i];
-            int endOfSection = startOfSection + 1000;
+            int startCnt = 0;
+            int endCnt = 0;
+            int startTmp = startTimes[i];
+            int endTmp = endTimes[i];
 
             for (int j = 0; j < lines.length; ++j) {
-                if (startTimes[j] >= startOfSection && startTimes[j] < endOfSection) {
-                    cnt++;
-                } else if (endTimes[j] >= startOfSection && endTimes[j] < endOfSection) {
-                    cnt++;
-                } else if (startTimes[j] <= startOfSection && endTimes[j] >= endOfSection) {
-                    cnt++;
+                int startOfSection = startTmp;
+                int endOfSection = startOfSection + 1000;
+                // 로그의 시작 시점 기준에서의 조건 처리
+                if (startTimes[j] >= startOfSection && startTimes[j] < endOfSection || endTimes[j] >= startOfSection && endTimes[j] < endOfSection || startTimes[j] <= startOfSection && endTimes[j] >= endOfSection) {
+                    // 시작점 끝점을 기준으로 하는 윈도우를 만들고, 해당 윈도우에 처리중인 로그의 경우들은
+                    // 시작점이 윈도우에 걸쳐있는 경우
+                    // 끝점이 윈도우에 걸쳐있는 경우
+                    // 로그가 윈도우를 포함하고 있는 경우
+                    startCnt++;
                 }
-            }
-            cnt = 0;
-            startOfSection = endTimes[i];
-            endOfSection = startOfSection + 1000;
 
-            for (int j = 0; j < lines.length; ++j) {
-                if (startTimes[j] >= startOfSection && startTimes[j] < endOfSection) {
-                    cnt++;
-                } else if (endTimes[j] >= startOfSection && endTimes[j] < endOfSection) {
-                    cnt++;
-                } else if (startTimes[j] <= startOfSection && endTimes[j] >= endOfSection) {
-                    cnt++;
+                startOfSection = endTmp;
+                endOfSection = startOfSection + 1000;
+                // 로그의 종료 시점 기준에 대해서도 똑같이 처리
+                if (startTimes[j] >= startOfSection && startTimes[j] < endOfSection || endTimes[j] >= startOfSection && endTimes[j] < endOfSection || startTimes[j] <= startOfSection && endTimes[j] >= endOfSection) {
+                    endCnt++;
                 }
             }
 
-            answer = Math.max(cnt, answer);
+            answer = Math.max(answer, Math.max(startCnt, endCnt));
+            // 로그 시작시간과 끝시간에 대한 카운트 값 중 큰 값과 answer 를 비교하여 큰 값으로 갱신
         }
 
         return answer;
