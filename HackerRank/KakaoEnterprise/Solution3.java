@@ -1,4 +1,4 @@
-package com.algorithms.HackerRank;
+package com.algorithms.HackerRank.KakaoEnterprise;
 
 import java.util.*;
 
