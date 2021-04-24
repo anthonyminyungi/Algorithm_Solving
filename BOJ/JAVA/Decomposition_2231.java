@@ -5,13 +5,13 @@ import java.io.*;
 public class Decomposition_2231 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
         String in = br.readLine();
         int n = Integer.parseInt(in);
         int tmp = n;
-        if (tmp > 9) {
-            tmp -= in.length() * 9;
-        }
+        if (tmp > 9) tmp -= in.length() * 9;
+        if (tmp < 0) tmp = 0;
+
         boolean have = false;
         int answer = 0;
         for (int i = tmp; i < n; i++) {
@@ -26,13 +26,9 @@ public class Decomposition_2231 {
                 break;
             }
         }
-        if (have) {
-            bw.append(String.valueOf(answer));
-        } else
-            bw.append("0");
 
-        bw.flush();
-        br.close();
-        bw.close();
+        if (!have) answer = 0;
+
+        System.out.println(answer);
     }
 }
