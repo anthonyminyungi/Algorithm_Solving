@@ -1,6 +1,6 @@
-package com.algorithms.Programmers.SkillCheck;
+package com.algorithms.Programmers.SkillCheck.Level2;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class Level2_2 {
     public static void main(String[] main) {
