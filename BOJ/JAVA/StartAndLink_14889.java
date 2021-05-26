@@ -3,18 +3,16 @@ package com.algorithms.BOJ.JAVA;
 import java.io.*;
 import java.util.*;
 
-// 우선 내 풀이 기록. 852ms
-// 조합을 활용한 주먹구구식 풀이
+// 직접 푼 코드로 정답 확인 후
+// 다른 수행시간이 빠른 정답 코드 참고해서 분석해봄.
 public class StartAndLink_14889 {
-    static List<int[]> team;
-    static List<int[]> pointComb;
-    static int[] arr;
-    static int n;
+    static int answer = 987654321, n;
+    static int[][] grid;
 
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         n = Integer.parseInt(br.readLine());
-        int[][] grid = new int[n][n];
+        grid = new int[n][n];
         StringTokenizer st;
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
@@ -22,67 +20,32 @@ public class StartAndLink_14889 {
                 grid[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        arr = new int[n];
-        for (int i = 0; i < n; i++)
-            arr[i] = i;
-        int[] res = new int[n / 2];
-        team = new ArrayList<>();
-        pointComb = new ArrayList<>();
-        combi(n, n / 2, 0, 0, arr, res, 0);
-        int[] res2;
-        int min = 987654321, sum;
-        for (int i = 0; i < team.size(); i++) {
-            res2 = new int[2];
-            combi(n / 2, 2, 0, 0, team.get(i), res2, 1);
-            res2 = new int[2];
-            combi(n / 2, 2, 0, 0, getOpposite(team.get(i)), res2, 1);
-            sum = 0;
-            for (int j = 0; j < pointComb.size() / 2; j++) {
-                int[] pair = pointComb.get(j);
-                sum += grid[pair[0]][pair[1]];
-                sum += grid[pair[1]][pair[0]];
-            }
-            for (int j = pointComb.size() / 2; j < pointComb.size(); j++) {
-                int[] pair = pointComb.get(j);
-                sum -= grid[pair[0]][pair[1]];
-                sum -= grid[pair[1]][pair[0]];
-            }
-            if (sum < 0) sum = -sum;
-            if (min > sum) min = sum;
-            pointComb.clear();
-        }
-
-        System.out.println(min);
+        getScore(0, 0, 0, 0, 0);
+        System.out.println(answer / 2);
+        // answer 를 구할 때 양쪽의 합에 여전히 최종 선택된 경우가 중복되어 계산되어 있으므로
+        // 차를 구했지만 그 값에서 2를 나눠줘야함.
     }
 
-    static void combi(int n, int r, int idx, int depth, int[] arr, int[] result, int flag) {
-        if (depth == r) {
-            if (flag == 0)
-                team.add(result.clone());
-            else
-                pointComb.add(result.clone());
+    static void getScore(int length, int startLength, int linkLength, int startSum, int linkSum) {
+        if (length == n) {
+            // 팀 분배가 끝나면 startSum - linkSum 을 수행하는데
+            // 여기서 양팀에 중복되어 더해진 경우는 모드 소거됨.
+            // 그 차를 구해서 최소의 경우 값 저장
+            int ans = startSum - linkSum;
+            if (ans < 0) ans = -ans;
+            if (answer > ans) answer = ans;
             return;
         }
-        if (idx == n) return;
 
-        result[depth] = arr[idx];
-
-        combi(n, r, idx + 1, depth + 1, arr, result, flag);
-        combi(n, r, idx + 1, depth, arr, result, flag);
-    }
-
-    static int[] getOpposite(int[] people) {
-        boolean[] opposite = new boolean[n];
-        int[] res = new int[n / 2];
-        for (int p : people) {
-            opposite[p] = true;
-        }
-        int idx = 0;
+        int sum = 0;
+        // 한 선수(length 번째)를 선택할 때 모든 짝의 경우의 수에 대한 총합
         for (int i = 0; i < n; i++) {
-            if (!opposite[i]) {
-                res[idx++] = arr[i];
-            }
+            sum += (grid[length][i] + grid[i][length]);
         }
-        return res;
+
+        if (startLength < n / 2) // length 번째 선수가 start 팀으로 들어갈 경우
+            getScore(length + 1, startLength + 1, linkLength, startSum + sum, linkSum);
+        if (linkLength < n / 2) // length 번째 선수가 link 팀으로 들어갈 경우
+            getScore(length + 1, startLength, linkLength + 1, startSum, linkSum + sum);
     }
 }
