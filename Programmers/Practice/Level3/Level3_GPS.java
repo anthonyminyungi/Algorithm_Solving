@@ -2,9 +2,16 @@ package com.algorithms.Programmers.Practice.Level3;
 
 import java.util.*;
 
-// 풀이를 봤는데도 무슨소린지 하나도 이해 못했음..
-// https://tosuccess.tistory.com/144
-// 다시 풀어보기
+/**
+ * 이 로그들을 고친다고 하면, 다음 로그는 앞서 고쳐진 로그의 영향을 받게된다.
+ * 입력되는 데이터에서 항상 모든 거점 간 경로가 있음이 보장되지 않는다고 문제에서 모든 노드가 연결되어 있지 않다고 했기 때문이다. 그래서 DP로 풀이해야 한다.
+ * 몇번째 어떤 노드를 고쳤는지, 그리고 그때의 최소 횟수는 어떤지를 메모이제이션 해야 한다.
+ * 즉, DP[i][j] : i번째 j 노드로 오면서 최소로 고친 횟수 -> 2차원 배열로 메모이제이션 한다.
+ * DP[i][j]는 DP[i - 1][j로 올수 있는 노드]의 최소값을 가져오고, 그 후에 현재 위치를 고친 횟수를 더해주게 된다.
+ * 점화식 - DP[i][j] = min(DP[i - 1][인접 노드들], DP[i - 1][j]) + (log[i] == j ? 0 : 1)
+ * 출처: https://softworking.tistory.com/417
+ * 참고: https://tosuccess.tistory.com/144
+ */
 public class Level3_GPS {
     public static void main(String[] args) {
         System.out.println(solution(7, 10, new int[][]{{1, 2,}, {1, 3}, {2, 3}, {2, 4}, {3, 4}, {3, 5}, {4, 6}, {5, 6}, {5, 7}, {6, 7}}, 6, new int[]{1, 2, 3, 3, 6, 7}));
